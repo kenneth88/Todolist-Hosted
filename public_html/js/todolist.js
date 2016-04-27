@@ -6,7 +6,7 @@ var APPLICATION_ID = "27F891D9-CEAA-A7C4-FF38-01C51372B800",
     Backendless.initApp(APPLICATION_ID, SECRET_KEY, VERSION);
     
     var dataStore = Backendless.Persistence.of(Posts);
-    var post = new Posts({title: "Todo List", content: " 1st Task:Finish the project", email:"email@email.com"});
+    var post = new Posts({title: "Todo List", content: " 1st Task:Finish the project", authorEmail:"email@email.com"});
     dataStore.save(post);
     
 });
