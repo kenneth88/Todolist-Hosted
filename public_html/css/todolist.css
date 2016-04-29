@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Blog Post*/
+
+.blog-post {
+    margin-bottom: 60px;
+}
+
+.blog-post-title {
+    margin-bottom: 5px;
+    font-size: 40px;
+}
+
+.blog-post-meta {
+    margin-bottom: 20px;
+    color: #999;
+    font-style:italic;
+}
+
+.blogtitle{
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+.contenttitle{
+    font-size: 20px;
+    font-weight: bold;
+}
+

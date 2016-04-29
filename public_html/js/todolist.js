@@ -5,9 +5,21 @@ var APPLICATION_ID = "27F891D9-CEAA-A7C4-FF38-01C51372B800",
   
     Backendless.initApp(APPLICATION_ID, SECRET_KEY, VERSION);
     
-    var dataStore = Backendless.Persistence.of(Posts);
-    var post = new Posts({title: "Todo List", content: " 1st Task:Finish the project", authorEmail:"email@email.com"});
-    dataStore.save(post);
+    var postsCollection = Backendless.Persistence.of(Posts).find();
+    
+     var wrapper = {
+        posts: postsCollection.data
+    };
+    
+     Handlebars.registerHelper('format', function (time) {
+        return moment(time).format("dddd, MMMM Do YYYY");
+    });
+    
+    var blogScript = $("#blogs-template").html();
+    var blogTemplate = Handlebars.compile(blogScript);
+    var blogHTML = blogTemplate(wrapper);
+    
+    $('.main-container').html(blogHTML);
     
 });
 
