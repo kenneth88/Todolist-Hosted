@@ -9,6 +9,16 @@ var APPLICATION_ID = "27F891D9-CEAA-A7C4-FF38-01C51372B800",
     var loginTemplate = Handlebars.compile(loginScript);
     
     $('.main-container').html(loginTemplate);
+    
+     $(document).on('submit', '.form-signin', function(event){
+        event.preventDefault();
+        
+        var data = $(this).serializeArray(),
+            email = data[0].value,
+            password = data[1].value;
+        
+      Backendless.UserService.login(email, password, true, new Backendless.Async(userLoggedIn, gotError));
+    });
 });
 
  function Posts(args){
