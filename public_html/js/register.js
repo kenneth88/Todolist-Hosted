@@ -90,9 +90,9 @@ function userLoggedOut(){
 function gotError(error) {
     console.log("Error message - " + error.message);
     console.log("Error code - " + error.code);
-    Materialize.toast('Incorrect Email or Password', 4000);
 }
 
 function userRegistered() {
     console.log("successfully registered");
+    Materialize.toast('successfully registered', 4000);
 }
